@@ -1,7 +1,7 @@
 
 class ArrayExercise<T> {
     
-    private let buffer: UnsafeMutablePointer<T>
+    private var buffer: UnsafeMutablePointer<T>
     private(set) var count: Int = 0
     private var capacity: Int
     
@@ -13,7 +13,16 @@ class ArrayExercise<T> {
     
     func append(object: T) {
         if count >= capacity {
-            return
+            let tempCapacity = capacity * 2
+            let tempBuffer = UnsafeMutablePointer<T>.allocate(capacity: tempCapacity)
+            for counter in 0...count {
+                let object: T = buffer.advanced(by: counter).pointee
+                tempBuffer.advanced(by: counter).initialize(to: object)
+                buffer.advanced(by: counter).deinitialize()
+            }
+            buffer.deallocate(capacity: capacity)
+            buffer = tempBuffer
+            capacity = tempCapacity
         }
         buffer.advanced(by: count).initialize(to: object)
         count += 1
