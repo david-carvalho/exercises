@@ -128,7 +128,8 @@ class ArrayExerciseTests: XCTestCase {
             let arrayToAdd = createAndFillArray(for: numberElements)
             let startDate = Date()
             
-            arrayToAdd.insert("test object", at: counter)
+            arrayToAdd.insert("test object",
+                              at: counter)
             
             totalTime += Date().timeIntervalSince(startDate)
         }
