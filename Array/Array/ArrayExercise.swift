@@ -5,7 +5,7 @@ class ArrayExercise<T> {
     private(set) var count: Int = 0
     private var capacity: Int
     
-    init(capacity: Int = 10) {
+    init(capacity: Int = 1) {
         // TODO: Any kind of thread operations will very easily break
         self.capacity = capacity
         buffer = UnsafeMutablePointer<T>.allocate(capacity: capacity)
@@ -18,11 +18,15 @@ class ArrayExercise<T> {
     }
     
     func append(object: T) {
+        increaseArrayCapacityIfNecessary()
+        buffer.advanced(by: count).initialize(to: object)
+        count += 1
+    }
+    
+    private func increaseArrayCapacityIfNecessary() {
         if count >= capacity {
             increaseArrayCapacity()
         }
-        buffer.advanced(by: count).initialize(to: object)
-        count += 1
     }
     
     private func increaseArrayCapacity() {
@@ -36,6 +40,17 @@ class ArrayExercise<T> {
         buffer.deallocate(capacity: capacity)
         buffer = tempBuffer
         capacity = tempCapacity
+    }
+    
+    func insert(_ object: T, at index: Int) {
+        increaseArrayCapacityIfNecessary()
+        for counter in stride(from: count - 1,
+                              through: index,
+                              by: -1) {
+            let objectToBeMoved = buffer.advanced(by: counter).pointee
+            buffer.advanced(by: counter + 1).initialize(to: objectToBeMoved)
+        }
+        buffer.advanced(by: index).pointee = object
     }
 }
 
