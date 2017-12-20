@@ -1,6 +1,6 @@
 
 import XCTest
-@testable import Array
+@testable import DataStructures
 
 class ArrayExerciseTests: XCTestCase {
     
@@ -12,17 +12,17 @@ class ArrayExerciseTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        runSpeedTests = true
+        runSpeedTests = false
     }
     
     func testArray_AddOneElement_CountIsOne() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test")
         XCTAssert(array.count == 1)
     }
     
     func testGivenArrayWithCapacityTwo_AddThreeElements_CountIsThree() {
-        let array = ArrayExercise<String>(capacity: 2)
+        let array = DataStructures.Array<String>(capacity: 2)
         array.append(object: "test")
         array.append(object: "test")
         array.append(object: "test")
@@ -30,7 +30,7 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     func testGivenArray_AddThreeElements_SecondElementIsCorrect() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -38,7 +38,7 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     func testGivenArrayWithCapacityTwo_AddThreeElements_ThirdElementCorrect() {
-        let array = ArrayExercise<String>(capacity: 2)
+        let array = DataStructures.Array<String>(capacity: 2)
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -47,7 +47,7 @@ class ArrayExerciseTests: XCTestCase {
     
     
     func testGivenArray_AddThreeElementsInsertOneAtPositionTwo_AllObjectsInCorrectPosition() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -59,7 +59,7 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     func testGivenArray_AddThreeElements_DeleteMiddleElementAndTheOtherElementsShouldBePresent() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -69,7 +69,7 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     func testGivenArray_AddThreeElements_DeleteLastElementAndTheOtherElementsShouldBePresent() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -79,7 +79,7 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     func testGivenArray_AddThreeElements_DeleteFirstElementAndTheOtherElementsShouldBePresent() {
-        let array = ArrayExercise<String>()
+        let array = DataStructures.Array<String>()
         array.append(object: "test1")
         array.append(object: "test2")
         array.append(object: "test3")
@@ -120,8 +120,8 @@ class ArrayExerciseTests: XCTestCase {
     }
     
     private func countTime(for numberElements: Int,
-                           array: ArrayExercise<String>,
-                           operation: ((ArrayExercise<String>, String, Int) -> Void)) {
+                           array: DataStructures.Array<String>,
+                           operation: ((DataStructures.Array<String>, String, Int) -> Void)) {
         var totalTime: Double = 0
         
         for counter in 0..<numberElements {
@@ -134,8 +134,8 @@ class ArrayExerciseTests: XCTestCase {
         print("For \(numberElements) it took \(totalTime / Double(numberElements)) ms")
     }
     
-    private func createAndFillArray(for numberElements: Int) -> ArrayExercise<String> {
-        let array = ArrayExercise<String>()
+    private func createAndFillArray(for numberElements: Int) -> DataStructures.Array<String> {
+        let array = DataStructures.Array<String>()
         for counter in 0...numberElements {
             array.append(object: String(counter))
         }

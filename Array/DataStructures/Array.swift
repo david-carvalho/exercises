@@ -1,5 +1,5 @@
 
-class ArrayExercise<T> {
+class Array<T> {
     
     private var buffer: UnsafeMutablePointer<T>
     private(set) var count: Int = 0
@@ -54,7 +54,7 @@ class ArrayExercise<T> {
     }
 }
 
-extension ArrayExercise where T: Equatable {
+extension Array where T: Equatable {
     func contains(_ object: T) -> Bool {
         for counter in 0..<count {
             if object == buffer.advanced(by: counter).pointee {
@@ -76,7 +76,7 @@ extension ArrayExercise where T: Equatable {
     }
 }
 
-extension ArrayExercise: Collection {
+extension Array: Collection {
     func index(after i: Int) -> Int {
         return 0
     }
