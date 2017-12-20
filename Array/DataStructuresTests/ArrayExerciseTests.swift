@@ -58,6 +58,36 @@ class ArrayExerciseTests: XCTestCase {
         XCTAssertEqual("test4", array[1])
     }
     
+    func testGivenArray_AddThreeElements_DeleteMiddleElementAndTheOtherElementsShouldBePresent() {
+        let array = ArrayExercise<String>()
+        array.append(object: "test1")
+        array.append(object: "test2")
+        array.append(object: "test3")
+        array.removeObject(at: 1)
+        XCTAssertEqual("test1", array[0])
+        XCTAssertEqual("test3", array[1])
+    }
+    
+    func testGivenArray_AddThreeElements_DeleteLastElementAndTheOtherElementsShouldBePresent() {
+        let array = ArrayExercise<String>()
+        array.append(object: "test1")
+        array.append(object: "test2")
+        array.append(object: "test3")
+        array.removeObject(at: 2)
+        XCTAssertEqual("test1", array[0])
+        XCTAssertEqual("test2", array[1])
+    }
+    
+    func testGivenArray_AddThreeElements_DeleteFirstElementAndTheOtherElementsShouldBePresent() {
+        let array = ArrayExercise<String>()
+        array.append(object: "test1")
+        array.append(object: "test2")
+        array.append(object: "test3")
+        array.removeObject(at: 0)
+        XCTAssertEqual("test2", array[0])
+        XCTAssertEqual("test3", array[1])
+    }
+    
     func testAccess() {
         if runSpeedTests {
             for numberElements in numberElementsForSpeedRuns {
@@ -130,6 +160,30 @@ class ArrayExerciseTests: XCTestCase {
             
             arrayToAdd.insert("test object",
                               at: counter)
+            
+            totalTime += Date().timeIntervalSince(startDate)
+        }
+        
+        print("For \(numberElements) it took \(totalTime / Double(numberElements)) ms")
+    }
+    
+    func testDeletion() {
+        if runSpeedTests {
+            for numberElements in numberElementsForSpeedRuns {
+                runDeletion(for: numberElements)
+            }
+        }
+    }
+    
+    private func runDeletion(for numberElements: Int) {
+        
+        var totalTime: Double = 0
+        
+        for counter in 0..<numberElements {
+            let arrayToRemove = createAndFillArray(for: numberElements)
+            let startDate = Date()
+            
+            arrayToRemove.removeObject(at: counter)
             
             totalTime += Date().timeIntervalSince(startDate)
         }

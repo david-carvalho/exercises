@@ -63,6 +63,17 @@ extension ArrayExercise where T: Equatable {
         }
         return false
     }
+    
+    func removeObject(at index: Int) {
+        let newCount = count - 1
+        for counter in index..<newCount {
+            let nextCounter = counter + 1
+            buffer.advanced(by: counter).deinitialize()
+            let object: T = buffer.advanced(by: nextCounter).pointee
+            buffer.advanced(by: counter).initialize(to: object)
+        }
+        count = newCount
+    }
 }
 
 extension ArrayExercise: Collection {
