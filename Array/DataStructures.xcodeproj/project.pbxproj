@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8702E4EA1FEB139F008E5791 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702E4E91FEB139F008E5791 /* Stack.swift */; };
+		8702E4EE1FEB1995008E5791 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8702E4ED1FEB1995008E5791 /* StackTests.swift */; };
 		87A97E381FE2DAEB0096FE1B /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A97E2E1FE2DAEB0096FE1B /* DataStructures.framework */; };
-		87A97E3D1FE2DAEB0096FE1B /* ArrayExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A97E3C1FE2DAEB0096FE1B /* ArrayExerciseTests.swift */; };
+		87A97E3D1FE2DAEB0096FE1B /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A97E3C1FE2DAEB0096FE1B /* ArrayTests.swift */; };
 		87A97E3F1FE2DAEB0096FE1B /* Array.h in Headers */ = {isa = PBXBuildFile; fileRef = 87A97E311FE2DAEB0096FE1B /* Array.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		87A97E491FE2DAFF0096FE1B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A97E481FE2DAFF0096FE1B /* Array.swift */; };
 /* End PBXBuildFile section */
@@ -24,11 +26,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8702E4E91FEB139F008E5791 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		8702E4ED1FEB1995008E5791 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		87A97E2E1FE2DAEB0096FE1B /* DataStructures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87A97E311FE2DAEB0096FE1B /* Array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Array.h; sourceTree = "<group>"; };
 		87A97E321FE2DAEB0096FE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A97E371FE2DAEB0096FE1B /* DataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A97E3C1FE2DAEB0096FE1B /* ArrayExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExerciseTests.swift; sourceTree = "<group>"; };
+		87A97E3C1FE2DAEB0096FE1B /* ArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 		87A97E3E1FE2DAEB0096FE1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87A97E481FE2DAFF0096FE1B /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,7 @@
 				87A97E311FE2DAEB0096FE1B /* Array.h */,
 				87A97E321FE2DAEB0096FE1B /* Info.plist */,
 				87A97E481FE2DAFF0096FE1B /* Array.swift */,
+				8702E4E91FEB139F008E5791 /* Stack.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -83,8 +88,9 @@
 		87A97E3B1FE2DAEB0096FE1B /* DataStructuresTests */ = {
 			isa = PBXGroup;
 			children = (
-				87A97E3C1FE2DAEB0096FE1B /* ArrayExerciseTests.swift */,
+				87A97E3C1FE2DAEB0096FE1B /* ArrayTests.swift */,
 				87A97E3E1FE2DAEB0096FE1B /* Info.plist */,
+				8702E4ED1FEB1995008E5791 /* StackTests.swift */,
 			);
 			path = DataStructuresTests;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8702E4EA1FEB139F008E5791 /* Stack.swift in Sources */,
 				87A97E491FE2DAFF0096FE1B /* Array.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -208,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87A97E3D1FE2DAEB0096FE1B /* ArrayExerciseTests.swift in Sources */,
+				8702E4EE1FEB1995008E5791 /* StackTests.swift in Sources */,
+				87A97E3D1FE2DAEB0096FE1B /* ArrayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

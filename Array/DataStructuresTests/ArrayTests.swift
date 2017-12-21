@@ -2,7 +2,7 @@
 import XCTest
 @testable import DataStructures
 
-class ArrayExerciseTests: XCTestCase {
+class ArrayTests: XCTestCase {
     
     var runSpeedTests = false
     let numberElementsForSpeedRuns = [3_000,
@@ -131,7 +131,7 @@ class ArrayExerciseTests: XCTestCase {
             totalTime += Date().timeIntervalSince(startDate)
         }
         
-        print("For \(numberElements) it took \(totalTime / Double(numberElements)) ms")
+        printResult(for: numberElements, totalTime: totalTime)
     }
     
     private func createAndFillArray(for numberElements: Int) -> DataStructures.Array<String> {
@@ -164,7 +164,7 @@ class ArrayExerciseTests: XCTestCase {
             totalTime += Date().timeIntervalSince(startDate)
         }
         
-        print("For \(numberElements) it took \(totalTime / Double(numberElements)) ms")
+        printResult(for: numberElements, totalTime: totalTime)
     }
     
     func testDeletion() {
@@ -188,6 +188,10 @@ class ArrayExerciseTests: XCTestCase {
             totalTime += Date().timeIntervalSince(startDate)
         }
         
-        print("For \(numberElements) it took \(totalTime / Double(numberElements)) ms")
+        printResult(for: numberElements, totalTime: totalTime)
+    }
+    
+    func printResult(for numberElements: Int, totalTime: Double) {
+        print("For \(numberElements) it took \(totalTime / Double(numberElements)) s")
     }
 }
