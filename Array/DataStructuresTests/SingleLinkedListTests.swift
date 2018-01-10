@@ -54,7 +54,7 @@ class SingleLinkedListTests: XCTestCase {
         let singleLinkedList = SingleLinkedList<String>()
         singleLinkedList.add(testString1)
         singleLinkedList.add(testString2)
-        XCTAssertEqual(singleLinkedList[1], testString2)
+        XCTAssertEqual(singleLinkedList[1].object, testString2)
     }
     
     func testGivenLinkedList_AddThreeElements_SubscriptPositionThreeIsCorrect() {
@@ -65,6 +65,53 @@ class SingleLinkedListTests: XCTestCase {
         singleLinkedList.add(testString1)
         singleLinkedList.add(testString2)
         singleLinkedList.add(testString3)
-        XCTAssertEqual(singleLinkedList[2], testString3)
+        XCTAssertEqual(singleLinkedList[2].object, testString3)
+    }
+    
+    func testGivenLinkedList_AddTwoElements_ContainsSecondElement() {
+        let singleLinkedList = SingleLinkedList<String>()
+        let testString1 = "testString1"
+        let testString2 = "testString2"
+        singleLinkedList.add(testString1)
+        singleLinkedList.add(testString2)
+        XCTAssert(singleLinkedList.contains(testString2))
+    }
+    
+    func testGivenLinkedList_AddTwoElements_DoesNotContainThirdElement() {
+        let singleLinkedList = SingleLinkedList<String>()
+    
+        singleLinkedList.add("testString1")
+        singleLinkedList.add("testString2")
+        
+        XCTAssert(!singleLinkedList.contains("testString3"))
+    }
+    
+    func testGiveLinkedListWithTwoElements_AddAfterFirstElement_SecondElementShouldBeCorrect() {
+        let singleLinkedList = SingleLinkedList<String>()
+        let testString1 = "testString1"
+        let testString2 = "testString2"
+        let testString3 = "testString3"
+        singleLinkedList.add(testString1)
+        singleLinkedList.add(testString2)
+        
+        singleLinkedList.add(object: testString3,
+                             after: singleLinkedList.head!)
+        XCTAssertEqual(testString3, singleLinkedList[1].object)
+    }
+    
+    func testGivenListListWithThreeElements_RemoveSecondElement_OtherTwoElementsShouldBeInCorrectPositions() {
+        let singleLinkedList = SingleLinkedList<String>()
+        let testString1 = "testString1"
+        let testString2 = "testString2"
+        let testString3 = "testString3"
+        singleLinkedList.add(testString1)
+        singleLinkedList.add(testString2)
+        singleLinkedList.add(testString3)
+        
+        singleLinkedList.remove(after: singleLinkedList[0])
+        
+        XCTAssertEqual(testString1, singleLinkedList[0].object)
+        XCTAssertEqual(testString3, singleLinkedList[1].object)
+        XCTAssertEqual(singleLinkedList.count, 2)
     }
 }
