@@ -4,13 +4,13 @@ import XCTest
 
 class SkipNodeTests: XCTestCase {
     func testGivenSkipNodeWithLevelFour_SetNextSkipNodeWithLevelTwo_NextNodesSetCorrectly() {
-        let levelFourSkipNode = SkipSequenceNode(with: "levelFourSkipNodeObject", levels: 4)
-        let levelTwoSkipNode = SkipSequenceNode(with: "levelTwoSkipNodeObject", levels: 2)
+        let levelFourSkipNode = SkipNode(with: "levelFourSkipNodeObject", level: 4)
+        let levelTwoSkipNode = SkipNode(with: "levelTwoSkipNodeObject", level: 2)
         levelFourSkipNode.setSubSquenceNodes(to: levelTwoSkipNode)
         
         XCTAssertEqual(levelFourSkipNode.nodes[0].object,
-                       levelTwoSkipNode.nodes[0].object)
+                       levelTwoSkipNode.object)
         XCTAssertEqual(levelFourSkipNode.nodes[1].object,
-                       levelTwoSkipNode.nodes[1].object)
+                       levelTwoSkipNode.object)
     }
 }
