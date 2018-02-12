@@ -9,8 +9,10 @@ class Solution: NSObject {
         var i = 0, j = 0
         var maxSize = 0
         let totalChars = s.count
+        
         while (i < totalChars && j < totalChars) {
-            let jindex = s.index(s.startIndex, offsetBy: j)
+            var jindex = s.index(s.startIndex, offsetBy: j)
+            
             if !set.contains(s[jindex]) {
                 set.add(s[jindex])
                 j += 1
