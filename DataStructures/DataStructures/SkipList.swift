@@ -2,7 +2,6 @@
 import UIKit
 
 class SkipList<T: Comparable> {
-//    private let list: SingleLinkedList<SkipSequenceNode<T>>
     private var head: SkipNode<T>?
     
     private let NumberLevels: Int = 4
@@ -113,8 +112,6 @@ class SkipList<T: Comparable> {
     private func randomLevel() -> Int {
         return Int(arc4random_uniform(UInt32(NumberLevels))) + 1
     }
-    
-    
 }
 
 extension SkipList: Collection {

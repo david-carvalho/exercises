@@ -24,8 +24,8 @@ class SingleLinkedList<T> {
     }
     
     func add(_ object: T) {
-        guard let head = head else {
-            self.head = Node(with: object)
+        guard head != nil else {
+            head = Node(with: object)
             return;
         }
         

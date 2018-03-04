@@ -28,6 +28,8 @@
 		87E73C1F1FFD9A53005CE7EE /* SkipNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73C1E1FFD9A53005CE7EE /* SkipNode.swift */; };
 		87E73C211FFE1B40005CE7EE /* SkipNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E73C201FFE1B40005CE7EE /* SkipNodeTests.swift */; };
 		87F96F6D1FFAE0A900830071 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F96F6C1FFAE0A900830071 /* Node.swift */; };
+		B53EC660204C3CF700058F10 /* HashTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EC65F204C3CF700058F10 /* HashTable.swift */; };
+		B53EC662204C3E2100058F10 /* HashTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53EC661204C3E2100058F10 /* HashTableTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		87E73C1E1FFD9A53005CE7EE /* SkipNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipNode.swift; sourceTree = "<group>"; };
 		87E73C201FFE1B40005CE7EE /* SkipNodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipNodeTests.swift; sourceTree = "<group>"; };
 		87F96F6C1FFAE0A900830071 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B53EC65F204C3CF700058F10 /* HashTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTable.swift; sourceTree = "<group>"; };
+		B53EC661204C3E2100058F10 /* HashTableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTableTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 				87F96F6C1FFAE0A900830071 /* Node.swift */,
 				87E73C181FFD951D005CE7EE /* SkipList.swift */,
 				87E73C1E1FFD9A53005CE7EE /* SkipNode.swift */,
+				B53EC65F204C3CF700058F10 /* HashTable.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				87A9EE491FFAE5DD00FA68E9 /* SingleLinkedListTests.swift */,
 				87E73C1A1FFD963D005CE7EE /* SkipListTests.swift */,
 				87E73C201FFE1B40005CE7EE /* SkipNodeTests.swift */,
+				B53EC661204C3E2100058F10 /* HashTableTest.swift */,
 			);
 			path = DataStructuresTests;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				87E73C191FFD951D005CE7EE /* SkipList.swift in Sources */,
 				87A97E491FE2DAFF0096FE1B /* Array.swift in Sources */,
 				87E73C1F1FFD9A53005CE7EE /* SkipNode.swift in Sources */,
+				B53EC660204C3CF700058F10 /* HashTable.swift in Sources */,
 				87AE916F1FEE7DB200B18669 /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +333,7 @@
 				87E73C211FFE1B40005CE7EE /* SkipNodeTests.swift in Sources */,
 				87E73C1B1FFD963D005CE7EE /* SkipListTests.swift in Sources */,
 				87A9EE4A1FFAE5DD00FA68E9 /* SingleLinkedListTests.swift in Sources */,
+				B53EC662204C3E2100058F10 /* HashTableTest.swift in Sources */,
 				87A97E3D1FE2DAEB0096FE1B /* ArrayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
