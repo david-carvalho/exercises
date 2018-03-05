@@ -11,11 +11,9 @@ class Solution {
             number = number / 10
             var partRoman = ""
             if part <= 3 && part > 0 {
-
                 for _ in 0..<part {
                     partRoman.append(numerals[counter][0])
                 }
-                
             } else if part == 4 {
                 partRoman = String("\(numerals[counter][0])\(numerals[counter][1])")
             } else if part == 5 {
